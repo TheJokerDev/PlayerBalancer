@@ -12,7 +12,6 @@
     <modules>
         <module>balancer</module>
         <module>addon</module>
-        <module>partyandfriendsaddon</module>
     </modules>
 
     <name>PlayerBalancerParent</name>

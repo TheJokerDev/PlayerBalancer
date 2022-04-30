@@ -34,6 +34,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 
 public class PlayerBalancer extends Plugin {
+
+    private static PlayerBalancer plugin;
     private boolean failed = false;
     private StatusManager statusManager;
     private SettingsHolder settings;
@@ -74,6 +76,10 @@ public class PlayerBalancer extends Plugin {
         updateCheck();
 
         this.execStart();
+    }
+
+    public static PlayerBalancer getPlugin() {
+        return plugin;
     }
 
     public void updateCheck() {
@@ -202,6 +208,7 @@ public class PlayerBalancer extends Plugin {
                 }
 
                 PasteHelper.reset();
+                plugin = this;
                 getLogger().info("The plugin has finished loading without any problems");
             } else {
                 getLogger().warning("-----------------------------------------------------");
